@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content=
+    "width=device-width, initial-scale=1">
+    <title>
+        Async and Await in JS
+    </title>
+</head>
+
+<body>
+    <script>
+     //delay using promise
+     function fetchData(){
+        return new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                resolve("Data fetched successfully");
+            },3000);// delay of 3 seconds
+        });
+     }   
+//Async function to call fetch data and wait for completion
+async function getData(){
+    console.log("Fetching Data...");
+    //Await fetchdata function
+    const result= await fetchData();
+    console.log(result);// logs the message
+    console.log("Task Completed!!!");
+}
+//call the async function
+getData();
+    </script>
+</body>
+</html>

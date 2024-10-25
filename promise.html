@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport " content="width=device-width, initial-scale=1 ">
+    <title>Promises in JavaScript</title>
+    </title>
+</head>
+<body>
+    <script>
+        // let promise= new Promise(function(resolve,reject){
+        //     const x="rajat";
+        //     const y="Rajat";
+        //     if(x===y){
+        //         resolve();
+        //     }
+        //     else{
+        //         reject();
+        //     }
+        // });
+        // promise.then(function(){
+        //     console.log('Success');
+        // }).catch(function(){
+        //     console.log('Some Error');
+        // });
+
+        //DATA FETCH DATA USING PROMISE
+        function fetch(isSuccess){
+return new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        if(isSuccess){
+            resolve("Data Fetched Successfully");
+        }
+        else{
+            reject("Error in fetching the data");
+        }
+    }, 4000);//simulate for 4 second delay
+});
+        }
+
+        //using the promise
+        fetch(false)// when promise is resolved
+        .then((message)=>{
+            console.log(message);// runs if promise resolved
+        })
+        .catch((error)=>{
+            console.log(error);//runs if promise rejected
+        });
+    </script>
+</body>
+</html>

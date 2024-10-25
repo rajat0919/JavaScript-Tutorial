@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        Browser Object Model
+    </title>
+</head>
+<body>
+    <script>
+//WINDOW OBJECTS  
+function msg(){  
+open("http://www.google.com");  
+}  
+
+function msg1(){  
+setTimeout(  
+function(){  
+alert("Welcome to my channel after 2 seconds")  
+},2000);  
+  
+}  
+</script>  
+<input type="button" value="Open" onclick="msg()"/> 
+<input type="button" value="SetTimeOut" onclick="msg1()"/>
+    </body>
+    </html>

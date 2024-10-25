@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+     initial-scale=1.0">
+    <title>Conditionals in JavaScript</title>
+    </title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //IF STATEMENT
+        //to check even or odd
+        let num = 55;
+        if (num % 2 === 0) {
+            console.log("Even");
+        }
+        if (num % 2 !== 0) {
+            console.log("Odd");
+        }
+        //IF-ELSE
+        let age = 15;
+        if (age >= 18) {
+            console.log("Eligible");
+        } else {
+            console.log("Not Eligible")
+        }
+        //ELSE-IF
+        const val = 0;
+        if (val > 0) {
+            console.log("Positive");
+        } else if (val < 0) {
+            console.log("Negative");
+        } else {
+            console.log("Zero");
+        }
+        //SWITCH
+        const per = 80;
+        let result;
+        switch (true) {
+            case per >= 90:
+                result = "Outstanding";
+                break;
+            case per >= 80:
+                result = "Excellent";
+                break;
+            case per >= 70:
+                result = "Very Good";
+                break;
+            case per >= 60:
+                result = "Average";
+                break;
+            default:
+                result = "Fail";
+                break;
+        }
+        console.log(`Result is :${result}`); //template literals or template string
+        //TERNARY OPERATOR
+        // condition ? true:false;
+        {
+            let age = 18;
+            let vote = age >= 18 ? 'Yes' : 'No';
+        }
+    </script>
+</body>
+
+</html>

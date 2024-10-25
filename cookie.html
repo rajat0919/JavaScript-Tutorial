@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookies in JavaScript</title>
+  </head>
+  <body>
+    <!-- Input for setting cookie -->
+    <label for="username">Username:</label>
+    <input type="text" id="username">
+    <button onclick="setCookie()">Set Cookie</button>
+    <br>
+<!-- Button to get cookie -->
+ <button onclick="getCookie()">Get Cookie</button>
+ <p id="cookieResult"></p>
+ <!-- Button to delete cookie -->
+  <button onclick="deleteCookie()">Delete Cookie</button>
+<script>
+//function to set cookie
+function setCookie(){
+    const username=document.getElementById("username").value;
+    document.cookie=`username=${username}; path=/`;
+    alert("Cookie has been set");
+}
+//funtion to get cookie
+function getCookie(){
+    const name="username=";
+    const decodeCookie=document.cookie;
+    const cookieArray=decodeCookie.split(';');
+    for(let i=0;i<cookieArray.length;i++){
+        let cookie=cookieArray[i].trim();
+        if(cookie.indexOf(name)===0)
+    {
+        const username=cookie.substring(name.length);
+        document.getElementById("cookieResult").innerText=`Hello, ${username}`;
+        return;
+    }
+    }
+    document.getElementById("cookieResult").innerText="No Cookie Found";
+}
+//function to delete cookie
+function deleteCookie()
+{
+    document.cookie="username=; expires= Thu, 10 Oct 2024 00:00:00 UTC; path=/";
+    alert("Cookie has been deleted");
+    document.getElementById("cookieResult").innerText="";
+}
+</script>
+</body>
+</html>

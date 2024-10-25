@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        JS Data Types
+    </title>
+</head>
+
+<body>
+    <h1>Data Types in JavaScript</h1>
+    <script>
+        //String Examples
+        const name = "Rajat";
+        const name1 = 'Sharma';
+        const result = `The String is ${name} ${name1}`;
+        console.log(result);
+        //JS Numbers
+        const num1 = -3 / 0;
+        console.log(num1);
+        const num2 = "abc" / 10;
+        console.log(num2); //Nan (Not A Number)
+        //Boolean Datatypes
+        //Logical Entities--->True or False
+        const datachecked = true;
+        console.log(datachecked);
+        //Undefined Datatype---------->Not Assigned
+        let name3;
+        console.log(name3);
+        //JS Null
+        const a = null;
+        console.log(a);
+        //JS Symbol---->ES6 2015
+        //Symbol is an immutable primitive
+        const val1 = Symbol("Hello");
+        console.log(val1);
+        //JS Objects
+        //Complex DataType-------->can store collection of data.
+        const student = {
+            firstname: 'Rohan',
+            lastname: 'Kumar',
+            class: 10
+        }; //key:value pair
+        console.log(student);
+        //Typeof
+        const name4 = 'Rajat';
+        typeof(name4); //string
+        //Array Object
+        const cars = ["Audi", "BMW", "Volvo", "Tata"]
+        console.log(cars);
+    </script>
+
+</body>
+
+</html>

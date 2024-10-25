@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        Event Handling Example
+    </title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: 20px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 18px;
+            border: 2px solid black;
+        }
+        .inputField {
+            display: block;
+            margin: 10px 0;
+        }
+        </style>
+</head>
+<body>
+    <!-- Mouse Events -->
+    <div class="box" id="mouseBox">Hover or Click Me!</div>
+
+    <!-- Keyboard Events -->
+    <input type="text" id="keyInput" placeholder="Press any key..." class="inputField">
+
+    <!-- Form Events -->
+    <form id="myForm">
+        <input type="text" id="nameInput" placeholder="Enter your name" class="inputField">
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Window/Document Events -->
+    <button id="resizeButton">Resize Window</button>
+    <script>
+        // Mouse Events
+        const mouseBox = document.getElementById('mouseBox');
+
+        mouseBox.onclick = function() {
+            alert('Element clicked!');
+        };
+
+        mouseBox.onmouseover = function() {
+            mouseBox.style.backgroundColor = 'lightgreen';
+        };
+
+        mouseBox.onmouseout = function() {
+            mouseBox.style.backgroundColor = 'lightblue';
+        };
+
+        mouseBox.onmousedown = function() {
+            mouseBox.style.borderColor = 'red';
+        };
+
+        mouseBox.onmouseup = function() {
+            mouseBox.style.borderColor = 'blue';
+        };
+
+        mouseBox.onmousemove = function(event) {
+            console.log(`Mouse moving at (${event.clientX}, ${event.clientY})`);
+        };
+
+        // Keyboard Events
+        const keyInput = document.getElementById('keyInput');
+
+        keyInput.onkeydown = function(event) {
+            console.log('Key down:', event.key);
+        };
+
+        keyInput.onkeyup = function(event) {
+            console.log('Key up:', event.key);
+        };
+
+        // Form Events
+        const nameInput = document.getElementById('nameInput');
+        const form = document.getElementById('myForm');
+
+        nameInput.onfocus = function() {
+            nameInput.style.backgroundColor = 'lightyellow';
+        };
+
+        nameInput.onblur = function() {
+            nameInput.style.backgroundColor = 'white';
+        };
+
+        nameInput.onchange = function() {
+            console.log('Value changed:', nameInput.value);
+        };
+
+        form.onsubmit = function(event) {
+            event.preventDefault(); // Prevent form from submitting
+            alert('Form submitted with name: ' + nameInput.value);
+        };
+
+        // Window/Document Events
+        window.onload = function() {
+            console.log('Page loaded');
+        };
+
+        window.onunload = function() {
+            console.log('Page unloaded');
+        };
+
+        window.onresize = function() {
+            console.log('Window resized to:', window.innerWidth, 'x', window.innerHeight);
+        };
+
+        // Button to trigger resize event manually
+        document.getElementById('resizeButton').onclick = function() {
+            window.resizeTo(1500, 1000);
+        };
+    </script>
+    </body>
+    </html>
